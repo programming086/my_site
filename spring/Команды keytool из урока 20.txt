@@ -1,0 +1,22 @@
+
+Генерация ключей
+keytool.exe -genkey -alias javabegin -keyalg RSA -keypass changeit -storepass changeit -keystore "c:\servers\glassfish4\glassfish\domains\domain1\config\keystore.jks"
+
+Получение содержимого хранилища
+keytool.exe -list -v -keystore "c:\servers\glassfish4\glassfish\domains\domain1\config\keystore.jks"
+keytool.exe -list -v -keystore "c:\servers\glassfish4\glassfish\domains\domain1\config\cacerts.jks"
+
+
+Экспортирование сертификата
+keytool.exe -export -alias javabegin -storepass changeit -file "c:\\server.cer" -keystore "c:\servers\glassfish4\glassfish\domains\domain1\config\keystore.jks"
+
+
+Импортирование сертификата
+keytool.exe -import -v -trustcacerts -alias javabegin -file "c:\\server.cer" -keystore "c:\servers\glassfish4\glassfish\domains\domain1\config\cacerts.jks" -keypass changeit
+
+Удаление ключей
+keytool.exe -delete -v -keystore "c:\servers\glassfish4\glassfish\domains\domain1\config\cacerts.jks"  -alias javabegin 
+
+
+Создание CSR (запрос на подписание сертификата)
+keytool.exe -certreq -alias javabegin -file "c:\\javabegin.csr" -keystore "c:\servers\glassfish4\glassfish\domains\domain1\config\cacerts.jks"

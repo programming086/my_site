@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<people>
+	<person id="1">
+		<name>Ivan</name>
+	</person>
+	<person id="2">
+		<name>Nikolay</name>
+	</person>
+	<person id="3">
+		<name>David</name>
+	</person>
+	<person id="4">
+		<name>Michele</name>
+	</person>
+	<person id="5">
+		<name>Katya</name>
+	</person>
+</people>
